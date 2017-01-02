@@ -1,0 +1,110 @@
+@import "variables";
+
+html,
+body {
+  margin:0 !important;
+  padding:0;
+  height:100%;
+  width: 100%;
+  @include border-box;
+  background: $light-blue;
+}
+
+
+//PureCSS Grids
+/* fix for IE and Firefox responsiveness */
+.pure-g {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+.pure-g > div[class*="pure-u-"] {
+  padding: 0em; //Add gutters to grid columns
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+//Header
+.header {
+  clear: both;
+  background: $light-blue;
+  color: $dark-blue;
+  text-align: center;
+  height: 100vh;
+
+  h1 {
+    font-family: $header-font;
+    font-size: 15vh;
+    overflow: hidden;
+    clear: both;
+    margin: 0;
+    padding: 1em;
+    @include bp-medium($size-medium) {
+      font-size: 7vh;
+    }
+  }
+  h2 {
+    font-family: $body-font;
+    font-size: 10vh;
+    @include bp-medium($size-medium) {
+      font-size: 5vh;
+    }
+  }
+}
+
+
+//Social Share
+.social-share {
+  width: 100%;
+  display: inline-block;
+  text-decoration: none;
+  @include social_share_rounded;
+  i {
+    font-size: 1em;
+  }
+  .fa-twitter {
+    margin-left: 1em;
+  }
+  @include bp-medium($size-medium) {
+    padding-bottom: 10%;
+  }
+}
+
+
+
+.content {
+  font-family: $body-font;
+  background: $dark-blue;
+  padding: 1.5em 0;
+  font-size: 1.5em;
+  overflow: hidden;
+  white-space: pre-line;
+  text-align: center;
+  @include bp-medium($size-medium) {
+    padding: 2%;
+    width: 96%;
+  }
+}
+
+img {
+  margin: 2%;
+  border: 1px solid $light-blue;
+  border-radius: 5%;
+  max-width: 80%;
+}
+
+//Footer
+#footer {
+  text-align: center;
+  clear: both;
+  padding:1em 0;
+  width: 100%;
+  @include bp-medium($size-medium) {
+    padding: 5%;
+    width: 90%;
+  }
+}
